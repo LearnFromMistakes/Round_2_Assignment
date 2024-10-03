@@ -1,19 +1,27 @@
-package com.example.ems.entity;
+package com.example.demo.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
+@Data
+
 @Document(indexName = "employees")
 public class Employee {
-    @Id
-    private String id;
+
+
+    private Long id;
+
     private String name;
-    private String department;
+
     private String gender;
+
+    private Long phone;
+
+    private String department;
 
 }
